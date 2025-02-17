@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Bird Loader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+
+        .logo {
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+            animation: fly-down 2s ease-out forwards, 
+                       flap 0.5s ease-in-out infinite alternate;
+        }
+
+        /* Flying down from top */
+        @keyframes fly-down {
+            0% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Flapping effect */
+        @keyframes flap {
+            0% { transform: rotate(-3deg) scale(1.02); }
+            100% { transform: rotate(3deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="canary-technology-logo.jpg" alt="Flying Logo" class="logo">
+    </div>
+
+</body>
+</html>

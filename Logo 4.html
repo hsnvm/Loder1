@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Rotating Loader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+
+        .logo {
+            width: 100%;
+            position: absolute;
+            animation: circular-motion 2s linear infinite, 
+                       flip 1s ease-in-out infinite alternate;
+        }
+
+        /* Circular motion */
+        @keyframes circular-motion {
+            0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+
+        /* Upside-down flipping */
+        @keyframes flip {
+            0% { transform: scaleX(1); }
+            100% { transform: scaleX(-1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="canary-technology-logo.jpg" alt="Rotating Logo" class="logo">
+    </div>
+
+</body>
+</html>
